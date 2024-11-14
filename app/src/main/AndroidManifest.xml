@@ -13,9 +13,8 @@
         android:theme="@style/Theme.Deck_of_cards"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.ui.base.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Deck_of_cards">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

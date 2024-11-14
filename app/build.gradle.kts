@@ -7,6 +7,10 @@ android {
     namespace = "com.tharsis.deck_of_cards"
     compileSdk = 34
 
+    buildFeatures{
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.tharsis.deck_of_cards"
         minSdk = 24
@@ -21,7 +25,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String","BASE_URL", "https://deckofcardsapi.com/api/deck/")
+        }
         release {
+            buildConfigField("String","BASE_URL", "https://deckofcardsapi.com/api/deck/")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -66,4 +74,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //KOIN DI
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+
+    //Retrofit
+    implementation(libs.androidx.retrofit)
+    implementation(libs.converter.gson)
+
+
 }
