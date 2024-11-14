@@ -83,5 +83,7 @@ dependencies {
     implementation(libs.androidx.retrofit)
     implementation(libs.converter.gson)
 
+    //Coroutines
+    implementation(libs.android.coroutines.kotlinx)
 
 }
