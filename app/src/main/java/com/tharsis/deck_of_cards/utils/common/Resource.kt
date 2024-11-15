@@ -1,4 +1,4 @@
-package com.tharsis.deck_of_cards.domain.common
+package com.tharsis.deck_of_cards.utils.common
 
 sealed class Resource<T> {
     data class Success<T>(val data: T) : Resource<T>()

@@ -78,6 +78,7 @@ dependencies {
     //KOIN DI
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.test)
 
     //Retrofit
     implementation(libs.androidx.retrofit)

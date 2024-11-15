@@ -1,9 +1,9 @@
 package com.tharsis.deck_of_cards.data.remote.datasource
 
 import com.tharsis.deck_of_cards.data.dto.deck.DeckResponse
-import com.tharsis.deck_of_cards.data.network.util.safeApiCall
+import com.tharsis.deck_of_cards.utils.network.safeApiCall
 import com.tharsis.deck_of_cards.data.remote.service.DeckApiService
-import com.tharsis.deck_of_cards.domain.common.Resource
+import com.tharsis.deck_of_cards.utils.common.Resource
 
 class DeckRemoteDataSourceImpl(private val apiService: DeckApiService) : DeckRemoteDataSource {
     override suspend fun getNewDeck(): Resource<DeckResponse> {

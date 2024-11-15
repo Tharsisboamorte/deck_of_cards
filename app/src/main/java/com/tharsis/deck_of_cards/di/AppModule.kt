@@ -1,7 +1,7 @@
 package com.tharsis.deck_of_cards.di
 
-import com.tharsis.deck_of_cards.data.network.Network
-import com.tharsis.deck_of_cards.data.network.NetworkConnectivity
+import com.tharsis.deck_of_cards.utils.network.Network
+import com.tharsis.deck_of_cards.utils.network.NetworkConnectivity
 import kotlinx.coroutines.Dispatchers
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module

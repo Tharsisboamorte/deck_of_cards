@@ -3,18 +3,14 @@ package com.tharsis.deck_of_cards.data.dto.cards
 import com.google.gson.annotations.SerializedName
 
 data class CardsResponse(
-
-    @SerializedName("code") var code: String? = null,
-    @SerializedName("image") var image: String? = null,
-    @SerializedName("images") var images: ImagesResponse? = ImagesResponse(),
-    @SerializedName("value") var value: String? = null,
-    @SerializedName("suit") var suit: String? = null
-
+    @SerializedName("code") val code: String? = null,
+    @SerializedName("image") val image: String? = null,
+    @SerializedName("images") val images: ImagesResponse? = ImagesResponse(),
+    @SerializedName("value") val value: String? = null,
+    @SerializedName("suit") val suit: String? = null
 )
 
 data class ImagesResponse(
-
-    @SerializedName("svg") var svg: String? = null,
-    @SerializedName("png") var png: String? = null
-
+    @SerializedName("svg") val svg: String? = null,
+    @SerializedName("png") val png: String? = null
 )

@@ -1,7 +1,7 @@
-package com.tharsis.deck_of_cards.data.network.util
+package com.tharsis.deck_of_cards.utils.network
 
-import com.tharsis.deck_of_cards.domain.common.ErrorType
-import com.tharsis.deck_of_cards.domain.common.Resource
+import com.tharsis.deck_of_cards.utils.common.ErrorType
+import com.tharsis.deck_of_cards.utils.common.Resource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

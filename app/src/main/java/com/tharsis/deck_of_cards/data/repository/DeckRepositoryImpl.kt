@@ -1,21 +1,21 @@
 package com.tharsis.deck_of_cards.data.repository
 
 import com.tharsis.deck_of_cards.data.dto.deck.DeckResponse
-import com.tharsis.deck_of_cards.domain.common.Resource
-import com.tharsis.deck_of_cards.data.remote.service.DeckApiService
+import com.tharsis.deck_of_cards.data.remote.datasource.DeckRemoteDataSource
 import com.tharsis.deck_of_cards.domain.repository.DeckRepository
+import com.tharsis.deck_of_cards.utils.common.Resource
 
-class DeckRepositoryImpl(private val deckApiService: DeckApiService) : DeckRepository {
+class DeckRepositoryImpl(private val deckRemoteDataSource: DeckRemoteDataSource) : DeckRepository {
     override suspend fun getDeck(): Resource<DeckResponse> {
-        TODO("Not yet implemented")
+        return deckRemoteDataSource.getNewDeck()
     }
 
-    override suspend fun reshuffleDeck(): Resource<DeckResponse> {
-        TODO("Not yet implemented")
+    override suspend fun reshuffleDeck(deckId: String): Resource<DeckResponse> {
+        return deckRemoteDataSource.reshuffleDeck(deckId)
     }
 
-    override suspend fun returnCardsToDeck(): Resource<DeckResponse> {
-        TODO("Not yet implemented")
+    override suspend fun returnCardsToDeck(deckId: String): Resource<DeckResponse> {
+        return deckRemoteDataSource.returnCardsToDeck(deckId)
     }
 
 }

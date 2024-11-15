@@ -4,19 +4,19 @@ import com.google.gson.annotations.SerializedName
 import com.tharsis.deck_of_cards.data.dto.cards.CardsResponse
 
 data class DeckResponse(
-    @SerializedName("success") var success: Boolean? = null,
-    @SerializedName("deck_id") var deckId: String? = null,
-    @SerializedName("cards") var cards: ArrayList<CardsResponse>? = arrayListOf(),
-    @SerializedName("shuffled") var shuffled: Boolean? = null,
-    @SerializedName("remaining") var remaining: Int? = null,
-    @SerializedName("piles") var piles: Piles? = Piles()
+    @SerializedName("success") val success: Boolean? = null,
+    @SerializedName("deck_id") val deckId: String? = null,
+    @SerializedName("cards") val cards: ArrayList<CardsResponse>? = arrayListOf(),
+    @SerializedName("shuffled") val shuffled: Boolean? = null,
+    @SerializedName("remaining") val remaining: Int? = null,
+    @SerializedName("piles") val pilesResponse: PilesResponse? = PilesResponse()
 )
 
-data class Piles(
-    @SerializedName("discard") var discard: Discard? = Discard()
+data class PilesResponse(
+    @SerializedName("discard") val discardResponse: DiscardResponse? = DiscardResponse()
 )
 
-data class Discard(
-    @SerializedName("remaining") var remaining: Int? = null
+data class DiscardResponse(
+    @SerializedName("remaining") val remaining: Int? = null
 )
 

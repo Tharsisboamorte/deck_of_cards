@@ -1,8 +1,6 @@
 package com.tharsis.deck_of_cards.data.remote.service
 
 import com.tharsis.deck_of_cards.data.dto.deck.DeckResponse
-import com.tharsis.deck_of_cards.domain.common.Resource
-import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 import retrofit2.http.Path
 
