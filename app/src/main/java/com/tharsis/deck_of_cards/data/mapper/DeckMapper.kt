@@ -1,12 +1,13 @@
 package com.tharsis.deck_of_cards.data.mapper
 
+import com.tharsis.deck_of_cards.data.dto.deck.DeckResponse
 import com.tharsis.deck_of_cards.data.dto.deck.DiscardResponse
 import com.tharsis.deck_of_cards.data.dto.deck.PilesResponse
 import com.tharsis.deck_of_cards.domain.model.Deck
 import com.tharsis.deck_of_cards.domain.model.Discard
 import com.tharsis.deck_of_cards.domain.model.Piles
 
-fun com.tharsis.deck_of_cards.data.dto.deck.Deck.toDomain(): Deck {
+fun DeckResponse.toDomain(): Deck {
     return Deck(
         success = this.success ?: false,
         id = this.deckId.orEmpty(),

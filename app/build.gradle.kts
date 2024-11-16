@@ -7,7 +7,7 @@ android {
     namespace = "com.tharsis.deck_of_cards"
     compileSdk = 34
 
-    buildFeatures{
+    buildFeatures {
         buildConfig = true
     }
 
@@ -26,10 +26,18 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String","BASE_URL", "https://deckofcardsapi.com/api/deck/")
+            buildConfigField(
+                type = "String",
+                name = "BASE_URL",
+                value = "\"https://deckofcardsapi.com/api/deck/\""
+            )
         }
         release {
-            buildConfigField("String","BASE_URL", "https://deckofcardsapi.com/api/deck/")
+            buildConfigField(
+                type = "String",
+                name = "BASE_URL",
+                value =  "\"https://deckofcardsapi.com/api/deck/\""
+            )
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -38,11 +46,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures {
         compose = true
@@ -86,10 +94,10 @@ dependencies {
 
     //Coroutines
     implementation(libs.android.coroutines.kotlinx)
-    testImplementation(libs.test.coroutines.kotlinx)
+    androidTestImplementation(libs.test.coroutines.kotlinx)
 
     //Mockito
-    testImplementation(libs.core.mockito)
-    testImplementation(libs.kotlin.mockito)
+    androidTestImplementation(libs.android.mockito)
+    androidTestImplementation(libs.kotlin.mockito)
 
 }

@@ -3,7 +3,7 @@ package com.tharsis.deck_of_cards.data.dto.deck
 import com.google.gson.annotations.SerializedName
 import com.tharsis.deck_of_cards.data.dto.cards.CardsResponse
 
-data class Deck(
+data class DeckResponse(
     @SerializedName("success") val success: Boolean? = null,
     @SerializedName("deck_id") val deckId: String? = null,
     @SerializedName("cards") val cards: ArrayList<CardsResponse>? = arrayListOf(),

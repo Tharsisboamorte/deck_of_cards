@@ -7,6 +7,6 @@ import com.tharsis.deck_of_cards.utils.common.Resource
 
 class GetNewDeckUseCase(private val deckRepository: DeckRepository) {
     suspend operator fun invoke(): Resource<Deck> {
-        return deckRepository.getDeck()
+        return deckRepository.getNewDeck()
     }
 }

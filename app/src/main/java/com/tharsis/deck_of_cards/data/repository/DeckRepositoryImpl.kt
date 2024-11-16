@@ -7,7 +7,7 @@ import com.tharsis.deck_of_cards.domain.repository.DeckRepository
 import com.tharsis.deck_of_cards.utils.common.Resource
 
 class DeckRepositoryImpl(private val deckRemoteDataSource: DeckRemoteDataSource) : DeckRepository {
-    override suspend fun getDeck(): Resource<Deck> {
+    override suspend fun getNewDeck(): Resource<Deck> {
         return when (val response = deckRemoteDataSource.getNewDeck()) {
             is Resource.Success -> Resource.Success(response.data.toDomain())
             is Resource.DataError -> Resource.DataError(response.errorType, response.exception)
