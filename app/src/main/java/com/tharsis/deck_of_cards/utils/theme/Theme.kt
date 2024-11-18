@@ -1,6 +1,8 @@
 package com.tharsis.deck_of_cards.utils.theme
 
+import android.content.pm.ActivityInfo
 import android.os.Build
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -8,6 +10,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
@@ -53,4 +56,14 @@ fun Deck_of_cardsTheme(
         typography = Typography,
         content = content
     )
+}
+
+@Composable
+fun LockScreenOrientation(activity: ComponentActivity, orientation: Int) {
+    DisposableEffect(orientation) {
+        activity.requestedOrientation = orientation
+        onDispose {
+            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+        }
+    }
 }

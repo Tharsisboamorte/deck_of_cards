@@ -1,6 +1,5 @@
 package com.tharsis.deck_of_cards.presentation.home.components
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,13 +24,11 @@ import org.koin.core.annotation.KoinInternalApi
 fun CardGrid(deck: List<Card>) {
 
     LazyVerticalGrid(
-        columns = GridCells.Adaptive(minSize = 100.dp),
+        columns = GridCells.Fixed(3),
         modifier = Modifier
             .wrapContentHeight()
             .fillMaxWidth()
-            .padding(16.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+            .padding(2.dp),
     ) {
         items(deck) { card ->
             getKoin().logger.info(msg = " ONLY IMAGES: ${card.cardImages.svg}")
@@ -42,11 +39,11 @@ fun CardGrid(deck: List<Card>) {
                 contentAlignment = Alignment.Center
             ) {
                 AsyncImage(
-                    model = card.cardImages.svg,
+                    model = card.cardImages.png,
                     contentDescription = "Card image of ${card.value} of ${card.suit}",
                     modifier = Modifier
                         .fillMaxSize(),
-                    contentScale = ContentScale.None,
+                    contentScale = ContentScale.Inside,
                 )
             }
         }

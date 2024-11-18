@@ -3,7 +3,7 @@ package com.tharsis.deck_of_cards.presentation.home
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -36,7 +36,7 @@ import org.koin.compose.getKoin
 import org.koin.core.annotation.KoinInternalApi
 
 @OptIn(KoinInternalApi::class)
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "UnusedBoxWithConstraintsScope")
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel
@@ -77,7 +77,7 @@ fun HomeScreen(
                 }
             }
             Spacer(modifier = Modifier.height(32.dp))
-            Box(
+            BoxWithConstraints(
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()
