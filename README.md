@@ -33,7 +33,7 @@ Bem-vindo à primeira versão do **Aplicativo de Jogo de Cartas**! Nesta versão
 - Otimizado para todos os tamanhos de tela com layouts responsivos.
 - Baralho otimizado para retornar cartas, embaralhar e devolvedor novas cartas.
 
-Esta versão foi projetada para oferecer uma base sólida para o jogo de cartas, garantindo desempenho fluido e uma experiência visual envolvente.
+Esta versão foi projetada para oferecer uma base sólida para o jogo de cartas, garantindo desempenho fluido.
 
 ---
 
