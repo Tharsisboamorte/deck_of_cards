@@ -33,6 +33,7 @@ android {
             )
         }
         release {
+            isDebuggable = false
             buildConfigField(
                 type = "String",
                 name = "BASE_URL",

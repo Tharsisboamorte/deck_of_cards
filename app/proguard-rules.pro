@@ -19,3 +19,17 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class com.tharsis.deck_of_cards.BuildConfig {
+    <fields>;
+}
+
+-keep public class com.tharsis.deck_of_cards.MainActivity {
+    public <methods>;
+}
+
+-optimizationpasses 5
+-dontpreverify
+
+-dontwarn android.support.**
+-whyareyoukeeping class *
