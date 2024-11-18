@@ -1,5 +1,6 @@
 package com.tharsis.deck_of_cards.presentation.home
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tharsis.deck_of_cards.domain.model.Deck
@@ -69,13 +70,18 @@ class HomeViewModel(
         _viewState.value = CardGameUiState.ReshuffledState
         returnCardsToDeck(deckId)
         viewModelScope.launch {
-            when (val result = reshuffleDeckUseCase(deckId)) {
-                is Resource.Success -> {
-                    getNewCards(result.data.id)
+            Log.i("NETWORK", "getReshuffledDeck: $deckId ")
+            if (deckId != ""){
+                when (val result = reshuffleDeckUseCase(deckId)) {
+                    is Resource.Success -> {
+                        getNewCards(result.data.id)
+                    }
+                    is Resource.DataError -> CardGameUiState.Error(
+                        message = result.errorType.message
+                    )
                 }
-                is Resource.DataError -> CardGameUiState.Error(
-                    message = result.errorType.message
-                )
+            } else {
+                getNewDeck()
             }
         }
     }

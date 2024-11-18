@@ -17,6 +17,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -25,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.tharsis.deck_of_cards.R
 import com.tharsis.deck_of_cards.presentation.home.components.CardGrid
@@ -92,7 +94,9 @@ fun HomeScreen(
                         horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        CircularProgressIndicator()
+                        CircularProgressIndicator(
+                            color = Color.Black
+                        )
                     }
                 }
 
@@ -102,14 +106,30 @@ fun HomeScreen(
                     CardGrid(deck = deck.cards)
                 }
 
-                is CardGameUiState.Error -> CircularProgressIndicator()
+                is CardGameUiState.Error -> {
+                    val errorMessage = (viewState as CardGameUiState.Error).message
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Error: $errorMessage",
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                }
+
                 is CardGameUiState.ReshuffledState -> {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        CircularProgressIndicator()
+                        CircularProgressIndicator(
+                            color = Color.Black
+                        )
                     }
                 }
             }
