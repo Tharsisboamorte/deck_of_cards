@@ -21,6 +21,13 @@ class DeckRepositoryImpl(private val deckRemoteDataSource: DeckRemoteDataSource)
         }
     }
 
+    override suspend fun getNewCards(deckId: String): Resource<Deck> {
+        return when (val response = deckRemoteDataSource.getNewCards(deckId)) {
+            is Resource.Success -> Resource.Success(response.data.toDomain())
+            is Resource.DataError -> Resource.DataError(response.errorType, response.exception)
+        }
+    }
+
     override suspend fun returnCardsToDeck(deckId: String): Resource<Deck> {
         return when (val response = deckRemoteDataSource.returnCardsToDeck(deckId)) {
             is Resource.Success -> Resource.Success(response.data.toDomain())

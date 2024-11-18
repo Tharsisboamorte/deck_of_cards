@@ -9,6 +9,9 @@ interface DeckApiService {
     @GET(ApiEndpoint.GET_DECK)
     suspend fun getNewDeck(): DeckResponse
 
+    @GET(ApiEndpoint.DRAW_DECK)
+    suspend fun getNewCards(@Path("deck_id") deckId: String): DeckResponse
+
     @GET(ApiEndpoint.RESHUFFLE_CARDS)
     suspend fun getReshuffledDeck(@Path("deck_id") deckId: String): DeckResponse
 

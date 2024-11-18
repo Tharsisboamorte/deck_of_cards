@@ -7,5 +7,6 @@ import com.tharsis.deck_of_cards.utils.common.Resource
 interface DeckRepository {
     suspend fun getNewDeck(): Resource<Deck>
     suspend fun reshuffleDeck(deckId: String): Resource<Deck>
+    suspend fun getNewCards(deckId: String): Resource<Deck>
     suspend fun returnCardsToDeck(deckId: String): Resource<Deck>
 }

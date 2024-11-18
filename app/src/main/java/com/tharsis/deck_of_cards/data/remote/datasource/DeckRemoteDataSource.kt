@@ -6,5 +6,6 @@ import com.tharsis.deck_of_cards.utils.common.Resource
 interface DeckRemoteDataSource {
     suspend fun getNewDeck(): Resource<DeckResponse>
     suspend fun reshuffleDeck(deckId: String): Resource<DeckResponse>
+    suspend fun getNewCards(deckId: String): Resource<DeckResponse>
     suspend fun returnCardsToDeck(deckId: String): Resource<DeckResponse>
 }

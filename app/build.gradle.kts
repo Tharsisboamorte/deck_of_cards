@@ -36,7 +36,7 @@ android {
             buildConfigField(
                 type = "String",
                 name = "BASE_URL",
-                value =  "\"https://deckofcardsapi.com/api/deck/\""
+                value = "\"https://deckofcardsapi.com/api/deck/\""
             )
             isMinifyEnabled = false
             proguardFiles(
@@ -99,5 +99,9 @@ dependencies {
     //Mockito
     androidTestImplementation(libs.android.mockito)
     androidTestImplementation(libs.kotlin.mockito)
+
+    //Coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
 
 }

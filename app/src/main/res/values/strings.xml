@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Deck_of_cards</string>
+    <string name="back_card_description">Back of the card image</string>
 </resources>

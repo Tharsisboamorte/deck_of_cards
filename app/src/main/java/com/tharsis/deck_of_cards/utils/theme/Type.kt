@@ -1,4 +1,4 @@
-package com.tharsis.deck_of_cards.presentation.ui.theme
+package com.tharsis.deck_of_cards.utils.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
